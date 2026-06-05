@@ -21,6 +21,7 @@ builder.Services.AddCors(options =>
             ;
         }
         else
+
         {
             policy
                 .WithOrigins("http://localhost:3000")
@@ -31,6 +32,18 @@ builder.Services.AddCors(options =>
             
     });
 });
+
+builder.Services
+    .AddHttpClient("aquii",client =>
+    {
+        var baseUrl = builder.Configuration["ClashUrl:BaseUrl"];
+        client.BaseAddress = new Uri (baseUrl);
+        
+        client.DefaultRequestHeaders.Add("Accept","application/json");
+        var jwtToken = builder.Configuration["ClashUrl:TokenJwt"];
+
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer" , jwtToken);
+    });
 
 
 
