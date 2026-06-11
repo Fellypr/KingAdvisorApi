@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClashRoyaleApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+952f7a2193f28d3b8a18c676c572ba5780e67c74")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dde7d49ef6e96d03936dc4b24296e5c6de15dbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClashRoyaleApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClashRoyaleApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

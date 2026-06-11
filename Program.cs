@@ -1,6 +1,12 @@
-
+using ClashRoyaleApi.Interfaces;
+using ClashRoyaleApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+builder.Services.AddScoped<IClashApiInterfaces,ClashApiServices>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -33,8 +39,15 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+builder.Services.AddHttpClient<ILlamaInterfaces,LlamaServices>(client =>
+{
+    client.BaseAddress = new Uri("https://api.groq.com/");
+});
+
+
 builder.Services
-    .AddHttpClient("aquii",client =>
+    .AddHttpClient<IClashApiInterfaces,ClashApiServices>(client =>
     {
         var baseUrl = builder.Configuration["ClashUrl:BaseUrl"];
         client.BaseAddress = new Uri (baseUrl);
